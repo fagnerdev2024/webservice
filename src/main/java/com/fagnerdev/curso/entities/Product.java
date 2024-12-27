@@ -3,6 +3,7 @@ package com.fagnerdev.curso.entities;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
+import java.io.Serial;
 import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
@@ -10,6 +11,8 @@ import java.util.Set;
 @Entity
 @Table(name = "tb_product")
 public class Product implements Serializable {
+
+    @Serial
     private static final long serialVersionUID = 1L;
 
     @Id
@@ -20,8 +23,9 @@ public class Product implements Serializable {
     private Double price;
     private String imgUrl;
 
-    @ManyToMany
-    @JoinTable(name = "tb_product_category", joinColumns = @JoinColumn(name = "product_id"), inverseJoinColumns = @JoinColumn(name = "category_id"))
+    /*@ManyToMany
+    @JoinTable(name = "tb_product_category", joinColumns = @JoinColumn(name = "product_id"), inverseJoinColumns = @JoinColumn(name = "category_id"))*/
+    @Transient
     private Set<Category> categories = new HashSet<>();
 
     @OneToMany(mappedBy = "id.product")
