@@ -3,6 +3,7 @@ package com.fagnerdev.webservice.entities;
 import com.fagnerdev.webservice.entities.enums.OrderStatus;
 import jakarta.persistence.*;
 
+import java.io.Serial;
 import java.io.Serializable;
 import java.time.Instant;
 import java.util.HashSet;
@@ -11,6 +12,9 @@ import java.util.Set;
 @Entity
 @Table(name = "tb_order")
 public class Order implements Serializable {
+
+
+    @Serial
     private static final long serialVersionUID = 1L;
 
     @Id

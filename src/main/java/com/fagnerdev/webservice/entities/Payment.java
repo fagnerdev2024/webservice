@@ -3,12 +3,15 @@ package com.fagnerdev.webservice.entities;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
+import java.io.Serial;
 import java.io.Serializable;
 import java.time.Instant;
 
 @Entity
 @Table(name = "tb_payment")
 public class Payment implements Serializable {
+
+    @Serial
     private static final long serialVersionUID = 1L;
 
     @Id
