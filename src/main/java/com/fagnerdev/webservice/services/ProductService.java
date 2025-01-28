@@ -12,14 +12,14 @@ import java.util.Optional;
 public class ProductService {
 
     @Autowired
-    private ProductRepository repository;
+    private ProductRepository productRepository;
 
     public List<Product> findAll() {
-        return repository.findAll();
+        return productRepository.findAll();
     }
 
     public Product findById(Long id) {
-        Optional<Product> obj = repository.findById(id);
-        return obj.get();
+        Optional<Product> product = productRepository.findById(id);
+        return product.get();
     }
 }
