@@ -17,12 +17,15 @@ public class Payment implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private Instant moment;
 
     @JsonIgnore
     @OneToOne
     @MapsId
     private Order order;
+
+
 
     public Payment() {
     }
