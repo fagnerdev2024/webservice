@@ -28,8 +28,8 @@ public class UserService {
         return obj.orElseThrow(() -> new ResourceNotFoundException(id));
     }
 
-    public User insert(User obj) {
-        return repository.save(obj);
+    public User insert(User user) {
+        return repository.save(user);
     }
 
     public void delete(Long id) {
